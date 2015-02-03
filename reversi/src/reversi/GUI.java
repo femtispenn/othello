@@ -1,5 +1,6 @@
 package reversi;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -31,6 +32,10 @@ public class GUI {
 			 public void actionPerformed (ActionEvent e) {
 				 if (e.getSource() instanceof JButton) {
 					 System.out.println("Du tröck på: "+((JButton) e.getSource()).getText());
+					 int button = Integer.parseInt(((JButton) e.getSource()).getText());
+					 buttons[button/10][button%10].setBackground(Color.BLACK);
+				     buttons[button/10][button%10].setOpaque(true);
+				     buttons[button/10][button%10].setBorderPainted(false);
 				 }
 			 }
 		 };
